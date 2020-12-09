@@ -1,0 +1,12 @@
+@startuml
+class DBConnection{
+   - Connection connection
+   - {static} dbConnection DBConnection
+   ==
+   - DBConnection()
+   + {static} DBConnection getDBConnection()
+   + Connection getConnection()
+}
+
+DBConnection -> DBConnection
+@enduml
