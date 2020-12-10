@@ -1,11 +1,11 @@
 @startuml
 class DBConnection{
-   - Connection connection
-   - {static} dbConnection DBConnection
+   - connection : Connection
+   - {static} dbConnection : DBConnection
    ==
    - DBConnection()
-   + {static} DBConnection getDBConnection()
-   + Connection getConnection()
+   + {static} getDBConnection() : DBConnection
+   + getConnection() : Connection
 }
 
 DBConnection -> DBConnection
