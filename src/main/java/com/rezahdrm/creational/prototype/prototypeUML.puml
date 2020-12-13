@@ -1,0 +1,25 @@
+@startuml
+
+class User{
+	- id : Long
+	- firstName : String
+	- lastName : String
+	- phoneNumber : String
+	- email : String
+	- username : String
+	- password : String
+	- nationalCode : String
+	- birthDay : Date
+	- createdAt : Date
+	- updatedAt : Date
+	- deletedAt : Date
+
+	+ clone() : User
+	+ setterAttributes ()
+	+ getterAttributes ()
+}
+
+interface Cloneable
+User ..|> Cloneable
+
+@enduml

@@ -13,4 +13,5 @@ Creational patterns provide various object creation mechanisms, which increase f
 * [Abstract Factory](abstractfactory) - Provides an interface for creating objects 
   in a superclass, but allows subclasses to alter the type of objects that will be created.
 * [Builder](builder) - Lets you construct complex objects step by step.
-  The pattern allows you to produce different types and representations of an object using the same construction code.
+  The pattern allows you to produce different types and representations of an object using the same construction code.   
+* [Prototype](prototype) - Lets you copy existing objects without making your code dependent on their classes.
