@@ -2,11 +2,11 @@ package com.rezahdrm.creational.factorymethod;
 
 import com.rezahdrm.creational.factorymethod.shape2D.*;
 
-public class FactoryShape2D {
+public class Shape2DFactory {
 
-    public static Shape2D getInstance(Shape2D.TypeShape2D typeShape2D) {
+    public static Shape2D getInstance(Shape2D.Shape2DType shape2DType) {
         Shape2D shape2D = null;
-        switch (typeShape2D) {
+        switch (shape2DType) {
             case CIRCLE:
                 shape2D = new Circle();
                 break;

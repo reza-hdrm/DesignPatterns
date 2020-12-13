@@ -1,41 +1,46 @@
 @startuml
-enum TypeShape2D{
-    RECTANGLE
-    SQUARE
-    CIRCLE
-    TRIANGLE
+package shape2D{
+    enum Shape2DType{
+        RECTANGLE
+        SQUARE
+        CIRCLE
+        TRIANGLE
+    }
+    interface Shape2D{
+        + draw() : void
+        + perimeter() : double
+        + area() : double
+    }
+
+    class Circle{
+    - radius : double
+    }
+
+    class Rectangle{
+    # length : double
+    - width : double
+    }
+
+    class Square{
+
+    }
+    class Triangle{
+        - a : double
+        - b : double
+        - c : double
+
+        + setABC(a : double , b : double , c : double) : void
+    }
+    Circle ..|> Shape2D
+    Rectangle ..|> Shape2D
+    Square --|> Rectangle
+    Triangle ..|> Shape2D
+    Shape2DType ---+ Shape2D
+
 }
-interface Shape2D{
-    + draw() : void
-    + perimeter() : double
-    + area() : double
+class Shape2DFactory{
+ + getInstance(shape2DType : Shape2DType) : Shape2D {static}
 }
 
-class Circle{
-- radius : double
-}
-
-class Rectangle{
-# length : double
-- width : double
-}
-
-class Square{
-
-}
-class Triangle{
-    - a : double
-    - b : double
-    - c : double
-
-    + setABC(a : double , b : double , c : double) : void
-}
-class FactoryShape2D{
- + getInstance(typeShape2D : TypeShape2D) : Shape2D {static}
-}
-Circle ..|> Shape2D
-Rectangle ..|> Shape2D
-Square --|> Rectangle
-Triangle ..|> Shape2D
 
 @enduml

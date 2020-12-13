@@ -4,11 +4,6 @@ public class Circle implements Shape2D {
     private double radius;
 
     @Override
-    public void draw() {
-        System.out.println("Drawing " + Circle.class.getSimpleName());
-    }
-
-    @Override
     public double perimeter() {
         return 2.0 * radius * Math.PI;
     }

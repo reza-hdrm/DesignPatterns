@@ -1,9 +1,11 @@
 package com.rezahdrm.creational.factorymethod.shape2D;
 
 public interface Shape2D {
-    enum TypeShape2D {RECTANGLE, SQUARE, CIRCLE, TRIANGLE,}
+    enum Shape2DType {RECTANGLE, SQUARE, CIRCLE, TRIANGLE,}
 
-    void draw();
+    default void draw() {
+        System.out.println("Drawing " + this.getClass().getSimpleName());
+    }
 
     double perimeter();
 
