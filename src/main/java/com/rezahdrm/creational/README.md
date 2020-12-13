@@ -1,4 +1,4 @@
-# Creational 
+# Creational Patterns
 
 ## Intent
 
