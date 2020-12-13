@@ -1,0 +1,111 @@
+@startuml
+package factory {
+    abstract class AbstractShapeFactory{
+        + {abstract} getShape() : Shape
+    }
+
+    enum ShapeType{
+        CIRCLE
+        RECTANGLE
+        SQUARE
+        TRIANGLE
+        CYLINDER
+        CUBE
+        SPHERE
+        CONE
+        CUBOID
+    }
+    class Shape3DFactory{
+
+    }
+    class Shape2DFactory{
+
+    }
+
+    abstract class ShapeFactory{
+        + {static} getShapeFactory():AbstractShapeFactory
+    }
+
+    enum ShapeFactoryType{
+        SHAPE2D
+        SHAPE3D;
+    }
+
+    ShapeType --+ AbstractShapeFactory
+    Shape3DFactory --|>AbstractShapeFactory
+    Shape2DFactory --|>AbstractShapeFactory
+    ShapeFactoryType --+ ShapeFactory
+}
+interface Shape{
+    + draw() : void {default}
+    + perimeter() : double {default}
+    + area() : double
+    + volume() : double {default}
+}
+package shape2D{
+    class Circle{
+    - radius : double
+    }
+
+    class Rectangle{
+    # length : double
+    - width : double
+    }
+
+    class Square{
+
+    }
+    class Triangle{
+        - a : double
+        - b : double
+        - c : double
+
+        + setABC(a : double , b : double , c : double) : void
+    }
+
+    Circle ..|> Shape
+    Rectangle ..|> Shape
+    Square --|> Rectangle
+    Triangle ..|> Shape
+}
+
+package shape3D{
+
+    class Cone{
+
+    }
+
+    class Cube{
+        - length : double
+    }
+
+    class Cuboid{
+        # length : double
+        - width : double
+        - height : double
+    }
+
+    class Cylinder{
+        # radius : double
+        # height : double
+    }
+
+    class Sphere{
+        - radius : double
+    }
+
+    Cone --|> Cylinder
+    Cube --|> Cuboid
+    Cuboid ..|> Shape
+    Cylinder ..|> Shape
+    Sphere ..|> Shape
+
+}
+
+
+
+
+
+
+
+@enduml
