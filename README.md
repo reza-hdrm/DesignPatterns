@@ -22,8 +22,4 @@ should not force your code to fit in patterns. It should come out naturally.
 
 
 
-1. [Creational](src/main/java/com/rezahdrm/creational/creational)
-    * [Singleton](src/main/java/com/rezahdrm/creational/singleton) - One global instance of a class
-    * [factory Method](src/main/java/com/rezahdrm/creational/factorymethod) - Define an interface for creating an object but let the subclasses decide which class to instantiate
-
-
+1. [Creational](src/main/java/com/rezahdrm/creational)
