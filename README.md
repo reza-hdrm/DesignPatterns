@@ -21,5 +21,6 @@ should not force your code to fit in patterns. It should come out naturally.
 ## Implemented patterns
 
 1. [Creational Patterns](src/main/java/com/rezahdrm/creational)
+2. [Structural Patterns](src/main/java/com/rezahdrm/structural)
    
 

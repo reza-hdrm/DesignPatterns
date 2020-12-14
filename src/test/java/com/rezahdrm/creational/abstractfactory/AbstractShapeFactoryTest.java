@@ -1,6 +1,7 @@
-package com.rezahdrm.creational.abstractfactory.factory;
+package com.rezahdrm.creational.abstractfactory;
 
-import com.rezahdrm.creational.abstractfactory.Shape;
+import com.rezahdrm.creational.abstractfactory.factory.AbstractShapeFactory;
+import com.rezahdrm.creational.abstractfactory.factory.ShapeFactory;
 import com.rezahdrm.creational.abstractfactory.shape3D.Cone;
 import com.rezahdrm.creational.abstractfactory.shape3D.Cuboid;
 import com.rezahdrm.creational.abstractfactory.shape2D.Circle;
@@ -12,7 +13,7 @@ public class AbstractShapeFactoryTest {
 
     @Test
     public void getShape() {
-        AbstractShapeFactory abstractShape2DFactory=ShapeFactory.getShapeFactory(ShapeFactory.ShapeFactoryType.SHAPE2D);
+        AbstractShapeFactory abstractShape2DFactory= ShapeFactory.getShapeFactory(ShapeFactory.ShapeFactoryType.SHAPE2D);
         AbstractShapeFactory abstractShape3DFactory=ShapeFactory.getShapeFactory(ShapeFactory.ShapeFactoryType.SHAPE3D);
         Shape circle=abstractShape2DFactory.getShape(AbstractShapeFactory.ShapeType.CIRCLE);
         Shape rectangle=abstractShape2DFactory.getShape(AbstractShapeFactory.ShapeType.RECTANGLE);

@@ -2,7 +2,7 @@ package com.rezahdrm.creational.abstractfactory.factory;
 
 
 public abstract class ShapeFactory {
-    enum ShapeFactoryType {
+    public enum ShapeFactoryType {
         SHAPE2D, SHAPE3D;
     }
 

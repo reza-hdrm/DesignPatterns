@@ -2,7 +2,7 @@
 
 ## Intent
 
-Creational patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
+Creational patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code (Manage object creation).
 
 
 ## Implemented Creational Patterns
