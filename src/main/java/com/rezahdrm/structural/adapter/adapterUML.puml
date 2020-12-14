@@ -1,0 +1,50 @@
+@startuml
+
+class User{
+	- id : Long
+	- fullName : String
+	- phoneNumber : String
+	- email : String
+	- username : String
+	- password : String
+	- nationalCode : String
+	- birthDay : Date
+	- createdAt : Date
+	- updatedAt : Date
+	- deletedAt : Date
+
+	+ setterAttributes ()
+	+ getterAttributes ()
+}
+
+class UserDAO{
+	+ save(user : User) : void
+    + update(user : User) : void
+    + delete(user : User) : void
+}
+
+class UserDTO{
+	- id : Long
+	- firstName : String
+	- lastName : String
+	- phoneNumber : String
+	- email : String
+	- password : String
+	- nationalCode : String
+	- birthDay : Date
+
+	+ setterAttributes ()
+	+ getterAttributes ()
+}
+
+class UserDTOAdapter{
+	- userDTO : UserDTO
+    + UserDTOAdapter(userDTO : userDTO)
+	+ {override} getterAttributes ()
+}
+
+
+UserDTOAdapter --|> User
+UserDTOAdapter --* "1" UserDTO
+
+@enduml
