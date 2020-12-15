@@ -1,0 +1,67 @@
+@startuml
+
+package shape2D{
+
+    abstract class Shape2D{
+        - color : Color final
+        + draw() : void
+        + Shape2D(color : Color)
+        + {abstract} perimeter() : double
+        + {abstract} area() : double
+        + getColor() : Color
+        + applyColor() : void
+    }
+
+    class Circle{
+    - radius : double
+    }
+
+    class Rectangle{
+    # length : double
+    - width : double
+    }
+
+    class Square{
+
+    }
+    class Triangle{
+        - a : double
+        - b : double
+        - c : double
+
+        + setABC(a : double , b : double , c : double) : void
+    }
+    Circle ..|> Shape2D
+    Rectangle ..|> Shape2D
+    Square --|> Rectangle
+    Triangle ..|> Shape2D
+
+}
+
+package color{
+    interface Color{
+        + applyColor() : default void
+    }
+
+    class Black{
+    }
+
+    class Blue{
+    }
+
+    class Red{
+    }
+
+    class Yellow{
+    }
+
+    Black ..|> Color
+    Blue ..|> Color
+    Red ..|> Color
+    Yellow ..|> Color
+
+}
+
+Shape2D "1"*- Color
+
+@enduml
