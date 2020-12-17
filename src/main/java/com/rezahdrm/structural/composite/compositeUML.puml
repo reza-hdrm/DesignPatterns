@@ -1,0 +1,27 @@
+@startuml
+
+abstract class MenuComponent <<Component>>{
+    - name : String
+    - url : String
+    + {abstract} toString() : String
+    # getLink() : String
+    + getName() : String
+    + getUrl() : String
+    + hashCode() : int
+    + equals( o : Object) : boolean
+}
+
+class Menu <<Composite>>{
+    - children : List<MenuComponent>
+    + add( menuComponent : MenuComponent) : Menu
+    + remove( menuComponent : MenuComponent) : Menu
+}
+
+class MenuItem <<Leaf>>{
+
+}
+
+Menu --|> MenuComponent
+Menu "1"*--"0..*" MenuComponent
+MenuItem --|> MenuComponent
+@enduml
