@@ -1,0 +1,50 @@
+@startuml
+
+abstract class Aircraft{
+    - manufacturer : String
+    - model : String
+    - topSpeed : int
+
+    + {abstract} toString() : String
+
+    + setterAttributes ()
+    + getterAttributes ()
+}
+
+class FighterAircraft{
+    - fighterAircraftType : FighterAircraftType
+}
+
+enum FighterAircraftType {
+    AIR_SUPERIORITY_FIGHTER,
+    FIGHTER_BOMBER,
+    HEAVY_FIGHTER,
+    LIGHT_FIGHTER,
+    INTERCEPTOR,
+    RECONNAISSANCE_FIGHTER,
+    STRATEGIC_FIGHTER,
+    ALL_WEATHER_FIGHTER
+}
+
+abstract class AircraftDecorator{
+    # aircraft : Aircraft
+}
+
+class GunDecorator{
+    - weaponName : String
+    - caliber : float
+}
+
+class MissileDecorator{
+    - weaponName : String
+    - caliber : float
+}
+
+
+FighterAircraft --|> Aircraft
+AircraftDecorator --|> Aircraft
+AircraftDecorator *--"1" Aircraft
+FighterAircraftType --+ FighterAircraft
+GunDecorator --|> AircraftDecorator
+MissileDecorator --|> AircraftDecorator
+@enduml
