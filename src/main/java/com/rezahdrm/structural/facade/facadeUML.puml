@@ -1,0 +1,52 @@
+@startuml
+
+@startuml
+
+class CPU {
+    - brand : String
+    - series : String
+    - cpuSocket : String
+    - cpuSpeed : String
+
+    + freeze () : void
+    + jump (position : long) : void
+    + execute () : void
+}
+
+class Memory {
+    - brand : String
+    - capacity : int
+    - computerMemoryType : String
+
+    + load (position:long, data:byte[]) : void
+}
+
+class HardDrive {
+    - brand : String
+    - series : String
+    - capacity : int
+
+    + read (lba:long, data:int) : byte[]
+}
+
+class ComputerFacade {
+    - cpu : CPU
+    - memory : Memory
+    - hardDrive : HardDrive
+
+    + start() : void
+}
+
+class ComputerFacadeTest {
+    + test() : void
+}
+
+CPU "1"--*"1" ComputerFacade
+Memory "1"--*"1" ComputerFacade
+HardDrive "1"--*"1" ComputerFacade
+ComputerFacade <-- ComputerFacadeTest
+
+
+@enduml
+
+@enduml

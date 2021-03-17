@@ -11,4 +11,5 @@ flexible and efficient (Object Relationship (Aggregation and Composition) Manage
 * [Bridge](bridge) - Separates an object's interface from its implementation
 * [Composite](composite) - A tree structure of simple and composite objects
 * [Decorator](decorator) - Add responsibilities to objects dynamically
+* [Facade](facade) - A single class that represents an entire subsystem
  
