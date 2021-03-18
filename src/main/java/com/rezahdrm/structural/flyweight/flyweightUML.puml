@@ -1,0 +1,25 @@
+@startuml
+
+@startuml
+
+class Person <<EntityClass>>{
+    - id : Long
+    - firstName : String
+    - lastName : String
+
+    + getters & setters
+}
+
+class PersonService{
+    - personCache : Map<Long, Person>
+    + findById(personId:Long) : Person
+}
+
+class PersonFlyweightTest {
+    + testFlyWeight : void
+}
+
+PersonService "*"*--"1" Person
+PersonFlyweightTest ..> PersonService
+PersonFlyweightTest ..> Person
+@enduml
