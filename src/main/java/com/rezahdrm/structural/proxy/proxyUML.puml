@@ -1,0 +1,33 @@
+@startuml
+
+@startuml
+
+interface PersonDAO {
+    + insert() : void
+}
+
+class PersonDAOImpl {
+
+}
+
+class LoggerProxy {
+    + {static} createLoggerProxy(dao:PersonDAO) : PersonDAO
+}
+
+class LoggerProxyTest {
+     testLoggerProxy() : void
+}
+
+interface java.lang.reflect.InvocationHandler{
+    + invoke(proxy:Object, method:Method, args:Object[]) : Object
+}
+
+class java.lang.reflect.Proxy
+
+PersonDAOImpl ...|> PersonDAO
+LoggerProxy ..|> java.lang.reflect.InvocationHandler
+LoggerProxy ..> java.lang.reflect.Proxy
+LoggerProxy "1"*-- PersonDAO
+LoggerProxyTest ..> PersonDAO
+
+@enduml
