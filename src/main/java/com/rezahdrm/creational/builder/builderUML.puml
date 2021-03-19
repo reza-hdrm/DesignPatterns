@@ -65,5 +65,13 @@ class Builder{
 	+ build() : X264Properties
 }
 
+class X264PropertiesTest {
+    + X264PropertiesBuilderTest() : void
+}
+
 Builder --+ X264Properties
+X264PropertiesTest ..> X264Properties
+X264PropertiesTest ..> Builder
+
+
 @enduml

@@ -19,7 +19,12 @@ class User{
 	+ getterAttributes ()
 }
 
+class UserTest {
+    + prototypeDesignPatternTest() : void
+}
+
 interface Cloneable
 User ..|> Cloneable
+UserTest ..> User
 
 @enduml

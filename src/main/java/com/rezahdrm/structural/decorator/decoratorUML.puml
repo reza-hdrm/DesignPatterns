@@ -1,6 +1,6 @@
 @startuml
 
-abstract class Aircraft{
+abstract class Aircraft {
     - manufacturer : String
     - model : String
     - topSpeed : int
@@ -11,7 +11,7 @@ abstract class Aircraft{
     + getterAttributes ()
 }
 
-class FighterAircraft{
+class FighterAircraft {
     - fighterAircraftType : FighterAircraftType
 }
 
@@ -26,18 +26,22 @@ enum FighterAircraftType {
     ALL_WEATHER_FIGHTER
 }
 
-abstract class AircraftDecorator{
+abstract class AircraftDecorator {
     # aircraft : Aircraft
 }
 
-class GunDecorator{
+class GunDecorator {
     - weaponName : String
     - caliber : float
 }
 
-class MissileDecorator{
+class MissileDecorator {
     - weaponName : String
     - caliber : float
+}
+
+class DecoratorTest {
+    + decoratorTest() : void
 }
 
 
@@ -47,4 +51,7 @@ AircraftDecorator *--"1" Aircraft
 FighterAircraftType --+ FighterAircraft
 GunDecorator --|> AircraftDecorator
 MissileDecorator --|> AircraftDecorator
+DecoratorTest ..> Aircraft
+DecoratorTest ..> MissileDecorator
+DecoratorTest ..> GunDecorator
 @enduml

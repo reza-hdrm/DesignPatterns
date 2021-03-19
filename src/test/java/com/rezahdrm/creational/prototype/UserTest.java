@@ -10,7 +10,7 @@ class UserTest {
     void prototypeDesignPatternTest() {
         User user = new User();
         User userClone = user.clone();
-        Assertions.assertTrue(user.hashCode() != userClone.hashCode());
+        Assertions.assertNotEquals(user.hashCode(), userClone.hashCode());
     }
 
 }

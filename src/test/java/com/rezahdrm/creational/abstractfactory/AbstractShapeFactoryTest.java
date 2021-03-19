@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class AbstractShapeFactoryTest {
 
     @Test
-    void getShape() {
+    void testShape() {
         AbstractShapeFactory abstractShape2DFactory = ShapeFactory.getShapeFactory(ShapeFactory.ShapeFactoryType.SHAPE2D);
         AbstractShapeFactory abstractShape3DFactory = ShapeFactory.getShapeFactory(ShapeFactory.ShapeFactoryType.SHAPE3D);
         Shape circle = abstractShape2DFactory.getShape(AbstractShapeFactory.ShapeType.CIRCLE);

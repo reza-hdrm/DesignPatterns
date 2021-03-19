@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class DecoratorTest {
 
     @Test
-    void test() {
+    void decoratorTest() {
         Assertions.assertDoesNotThrow(() -> {
             Aircraft f14 = new FighterAircraft(
                     "Grumman", "F-14", 2485, FighterAircraft.FighterAircraftType.HEAVY_FIGHTER);

@@ -6,18 +6,15 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Config {
-    //Path From Content Root
-    private final String pathname = "src/main/resources/application.properties";
-    private final File file = new File(pathname);
     private Properties properties = null;
-
     // Lazy Loading
     private static volatile Config config = null;
 
     private Config() {
-        try {
+        String pathname = "src/main/resources/application.properties";
+        try (FileInputStream fileInputStream = new FileInputStream(new File(pathname))) {
             properties = new Properties();
-            properties.load(new FileInputStream(file));
+            properties.load(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }

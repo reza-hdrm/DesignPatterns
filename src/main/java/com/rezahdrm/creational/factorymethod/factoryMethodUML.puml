@@ -42,5 +42,11 @@ class Shape2DFactory{
  + getInstance(shape2DType : Shape2DType) : Shape2D {static}
 }
 
+class Shape2DFactoryTest {
+    + getInstance() : void
+}
+
+Shape2DFactoryTest ..> Shape2D
+Shape2DFactoryTest ..> Shape2DFactory
 
 @enduml

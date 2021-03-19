@@ -102,10 +102,12 @@ package shape3D{
 
 }
 
+class AbstractShapeFactoryTest{
+    + testShape() : void
+}
 
-
-
-
-
-
+AbstractShapeFactoryTest ..> factory
+AbstractShapeFactoryTest ..> shape2D
+AbstractShapeFactoryTest ..> shape3D
+AbstractShapeFactoryTest ..> Shape
 @enduml

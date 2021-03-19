@@ -1,6 +1,6 @@
 @startuml
 
-abstract class MenuComponent <<Component>>{
+abstract class MenuComponent <<Component>> {
     - name : String
     - url : String
     + {abstract} toString() : String
@@ -11,17 +11,22 @@ abstract class MenuComponent <<Component>>{
     + equals( o : Object) : boolean
 }
 
-class Menu <<Composite>>{
+class Menu <<Composite>> {
     - children : List<MenuComponent>
     + add( menuComponent : MenuComponent) : Menu
     + remove( menuComponent : MenuComponent) : Menu
 }
 
-class MenuItem <<Leaf>>{
+class MenuItem <<Leaf>>
 
+class MenuComponentTest {
+    + compositeTest() : void
 }
 
 Menu --|> MenuComponent
 Menu "1"*--"0..*" MenuComponent
 MenuItem --|> MenuComponent
+MenuComponentTest ..> Menu
+MenuComponentTest ..> MenuItem
+
 @enduml

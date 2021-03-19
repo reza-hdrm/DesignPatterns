@@ -22,8 +22,6 @@ package shape2D{
     }
 
     class Square{
-
-    }
     class Triangle{
         - a : double
         - b : double
@@ -38,22 +36,15 @@ package shape2D{
 
 }
 
-package color{
-    interface Color{
+package color {
+    interface Color {
         + applyColor() : default void
     }
 
-    class Black{
-    }
-
-    class Blue{
-    }
-
-    class Red{
-    }
-
-    class Yellow{
-    }
+    class Black
+    class Blue
+    class Red
+    class Yellow
 
     Black ..|> Color
     Blue ..|> Color
@@ -62,6 +53,12 @@ package color{
 
 }
 
+class BridgeTest {
+    + patternTest() : void
+}
+
+BridgeTest ..> color
+BridgeTest ..> shape2D
 Shape2D "1"*- Color
 
 @enduml

@@ -11,7 +11,6 @@ public class MissileDecorator extends AircraftDecorator {
     }
 
 
-
     @Override
     public String toString() {
         return aircraft.toString() + "Missile: " + modelName + "\t" + "Operational Range: " + operationalRang+"\n";
