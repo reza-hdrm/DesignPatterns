@@ -1,0 +1,53 @@
+@startuml
+package handler {
+    abstract class MessageHandler {
+        # nextHandler : MessageHandler
+        + {abstract}  handle(message:Message) : void
+    }
+
+    class EmailMessageHandler
+    class FaxMessageHandler
+    class SMSMessageHandler
+
+    MessageHandler --*"1" MessageHandler
+    EmailMessageHandler --|> MessageHandler
+    FaxMessageHandler --|> MessageHandler
+    SMSMessageHandler --|> MessageHandler
+}
+
+package service {
+    class MessageService {
+        + sendMessage(message : Message) : void
+    }
+}
+
+class Message{
+    - value : String
+    - destinationMap : Map<Destination,String>
+    + setters() & getters
+    + {static}getBuilder() : MessageBuilder
+
+}
+
+enum Destination {
+        SMS, FAX, EMAIL
+}
+
+class MessageBuilder <<static>> {
+    - value : String
+    - destinationMap : Map<Destination,String>
+    + setValue(value:String) : MessageBuilder
+    + addDestination(destination:Destination,value:String) : MessageBuilder
+    + createMessage() : Message
+}
+
+class MessageTest {
+    + messageTest() : void
+}
+
+MessageService ..> Message
+Destination ---+ Message
+MessageBuilder ---+ Message
+MessageTest ..> Message
+MessageTest ..> MessageService
+@enduml
