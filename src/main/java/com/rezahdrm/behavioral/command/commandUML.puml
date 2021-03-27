@@ -1,0 +1,49 @@
+@startuml
+package receiver {
+    interface ServerAgent {
+        connect() : void
+        reboot() : void
+        shutdown() : void
+        disconnect() : void
+    }
+
+    class AsiaServer
+    class EuropeServer
+    class USAServer
+
+    AsiaServer ..|> ServerAgent
+    EuropeServer ..|> ServerAgent
+    USAServer ..|> ServerAgent
+}
+
+package command {
+    abstract class Command{
+        # serverAgent : ServerAgent
+        + {abstract} execute() : void
+    }
+
+    class RebootCommand
+    class ShutdownCommand
+
+    RebootCommand --|> Command
+    ShutdownCommand --|> Command
+    Command "1"*--"1" ServerAgent
+}
+
+class ServerCommandInvoker{
+    - command : Command
+    + run() : void
+}
+class CommandTest {
+    + testCommand() : void
+}
+
+ServerCommandInvoker "1"*--"1" Command
+ServerCommandInvoker ..> Command
+
+CommandTest ..> ServerAgent
+CommandTest ..> AsiaServer
+CommandTest ..> Command
+CommandTest ..> ShutdownCommand
+CommandTest ..> ServerCommandInvoker
+@enduml
