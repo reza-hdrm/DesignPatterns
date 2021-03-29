@@ -1,0 +1,44 @@
+@startuml
+interface Expression {
+    + interpret(contex : Map<String, Expression>) : int
+}
+
+class Evaluator<<Terminal>>{
+    - syntaxTree : Expression
+    + Evaluator(expression : String)
+}
+
+class Mines<<NonTerminal>> {
+    - leftOperand : Expression
+    - rightOperand : Expression
+    + Plus(leftOperand:Expression, rightOperand:Expression)
+}
+class Plus<<NonTerminal>> {
+    - leftOperand : Expression
+    - rightOperand : Expression
+}
+
+class Variable<<NonTerminal>> {
+    - name : String
+    + Variable(name:String)
+}
+
+class Num<<NonTerminal>> {
+    - value : int
+    + Num(value:int)
+}
+
+class InterpreterTest {
+    + interpreterTest() : void
+}
+
+
+Evaluator "1"*--"1" Expression
+Mines "1"*--"2" Expression
+Plus "1"*--"2" Expression
+Plus ...|> Expression
+Mines ..|> Expression
+Evaluator ...|> Expression
+Variable ..|> Expression
+Num ..|> Expression
+@enduml
