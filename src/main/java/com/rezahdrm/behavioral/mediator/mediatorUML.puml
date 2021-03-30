@@ -1,0 +1,35 @@
+@startuml
+abstract class SenderReceiver<<Colleague>> {
+    # messageDelivery : MessageDelivery
+    - name : String
+    + SenderReceiver(messageDelivery:MessageDelivery,name:String)
+    + {abstract} sendMessage(userName:String,message:String) : void
+    + getName() : String
+    receiveMessage(sender:SenderReceiver, message:String) : void
+}
+
+class Client
+class Group{
+    - clientList : List<Client
+    + addGroup(client:Client) : Group
+}
+
+class MessageDelivery<<Mediator>> {
+    - receiverMap : Map<String, SenderReceiver>
+    + registerClient(SenderReceiver senderReceiver) : void
+    + broadcast(sender:SenderReceiver, clientName:String, message:String) : void
+}
+class MediatorTest {
+    + mediatorTest() : void
+}
+
+Client --|> SenderReceiver
+Group --|> SenderReceiver
+Group ..> Client
+MessageDelivery "1"*--"1..*" SenderReceiver
+MessageDelivery ..> SenderReceiver
+MediatorTest ..> MessageDelivery
+MediatorTest ..> Client
+MediatorTest ..> Group
+
+@enduml

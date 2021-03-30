@@ -10,3 +10,4 @@ These design patterns are all about Class's objects communication. Behavioral pa
 * [Command](command) - Encapsulate a command request as an object
 * [Interpreter](interpreter) - A way to include language elements in a program
 * [Iterator](iterator) - Sequentially access the elements of a collection
+* [Mediator](mediator) - Defines simplified communication between classes
