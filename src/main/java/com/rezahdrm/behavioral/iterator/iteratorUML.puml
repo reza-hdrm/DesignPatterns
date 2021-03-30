@@ -1,0 +1,22 @@
+@startuml
+class FileContentReader{
+    - file : File
+    - fileReader : FileReader
+    - bufferedReader : BufferedReader
+
+    + FileContentReader(file:File)
+    + FileContentReader(pathName:String)
+    - initialize() : void
+}
+
+class java.lang.Iterable {
+    + iterator() : Iterator
+}
+
+class IteratorTest {
+    + iteratorTest() : void
+}
+
+FileContentReader ...|> java.lang.Iterable
+IteratorTest ..> FileContentReader
+@enduml
