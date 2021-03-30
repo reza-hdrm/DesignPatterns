@@ -1,0 +1,25 @@
+@startuml
+class MainPanel {
+    -  jLabel : JLabel
+    - jTextField : JTextField
+    - jTextFieldHistory : JTextFieldHistory
+    - jButton : JButton
+}
+
+class JTextFieldMemento {
+    - text : String
+    + getText() : String
+    + setText(text:String) : void
+}
+
+class JTextFieldHistory<<Caretaker>> {
+    - fieldMementos : LinkedList<JTextFieldMemento>
+    - jTextField : JTextField
+    + save() : void
+    + undo() : void
+}
+
+MainPanel "1"*-->"1" JTextFieldHistory
+JTextFieldHistory "1"*-->"0..*" JTextFieldMemento
+JTextFieldHistory ..> JTextFieldMemento
+@enduml
