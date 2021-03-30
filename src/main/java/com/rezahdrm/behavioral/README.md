@@ -12,3 +12,4 @@ These design patterns are all about Class's objects communication. Behavioral pa
 * [Iterator](iterator) - Sequentially access the elements of a collection
 * [Mediator](mediator) - Defines simplified communication between classes
 * [Memento](memento) - Capture and restore an object's internal state
+* [Observer](observer) - A way of notifying change to a number of classes

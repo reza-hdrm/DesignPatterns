@@ -1,0 +1,32 @@
+@startuml
+class MessageSubject extends java.util.Observable {
+    +  receiveMessage(message:String) : void
+}
+
+class EmailObserver {
+    -  emailAddresses : String[]
+}
+
+class SMSObserver {
+    -  phoneNumbers : String[]
+}
+
+class TelegramObserver {
+    -  userNames : String[]
+}
+
+interface java.util.Observer {
+    + update(o:Observable, arg:Object) : void
+}
+
+class ObserverTest {
+    + observerTest() : void
+}
+EmailObserver ..|> java.util.Observer
+SMSObserver ..|> java.util.Observer
+TelegramObserver ..|> java.util.Observer
+ObserverTest ..> EmailObserver    :<<create>>
+ObserverTest ..> TelegramObserver :<<create>>
+ObserverTest ..> SMSObserver      :<<create>>
+ObserverTest ..> MessageSubject   :<<create>>
+@enduml
