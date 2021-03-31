@@ -1,0 +1,22 @@
+@startuml
+abstract class BaseEngineering<<Template>> {
+    # {abstract} additional() : void
+    + study() : void
+    - advancedMath() : void
+    - math() : void
+    - physics() : void
+}
+
+class SoftwareEngineering
+class ElectricalEngineering
+
+class TemplateMethodTest {
+    + templateMethodTest():void
+}
+
+SoftwareEngineering --|> BaseEngineering
+ElectricalEngineering --|> BaseEngineering
+TemplateMethodTest ..> BaseEngineering
+TemplateMethodTest ..> SoftwareEngineering   : <<create>>
+TemplateMethodTest ..> ElectricalEngineering : <<create>>
+@enduml
