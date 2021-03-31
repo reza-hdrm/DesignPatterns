@@ -1,0 +1,34 @@
+@startuml
+interface RemoteControl {
+    + switchState(tv:TV) : void
+}
+
+class Off {
+    + {static} INSTANCE : Off
+    - Off()
+}
+
+class On {
+    + {static} INSTANCE : On
+    - On()
+}
+
+class TV<<Context>> {
+    - state : RemoteControl
+    + TV(state:RemoteControl)
+    + setState(state:RemoteControl) : void
+    + togglePower() : void
+}
+
+class StateTest{
+    + stateTest() : void
+}
+
+On ..|> RemoteControl
+Off ..|> RemoteControl
+On "1"*--->"1" On
+Off "1"*--->"1" Off
+TV "1"*--->"1" RemoteControl
+TV ...> RemoteControl
+StateTest ...> TV   : <<create>>
+@enduml

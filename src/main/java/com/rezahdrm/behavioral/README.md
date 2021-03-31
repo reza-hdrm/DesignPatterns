@@ -13,3 +13,4 @@ These design patterns are all about Class's objects communication. Behavioral pa
 * [Mediator](mediator) - Defines simplified communication between classes
 * [Memento](memento) - Capture and restore an object's internal state
 * [Observer](observer) - A way of notifying change to a number of classes
+* [State](state) - Alter an object's behavior when its state changes
