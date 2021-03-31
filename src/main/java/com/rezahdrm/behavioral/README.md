@@ -14,3 +14,4 @@ These design patterns are all about Class's objects communication. Behavioral pa
 * [Memento](memento) - Capture and restore an object's internal state
 * [Observer](observer) - A way of notifying change to a number of classes
 * [State](state) - Alter an object's behavior when its state changes
+* [Strategy](strategy) - Encapsulates an algorithm inside a class

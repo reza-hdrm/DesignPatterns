@@ -1,0 +1,17 @@
+@startuml
+interface InsuranceCalculate {
+    + calculate() : void
+}
+
+class InsuranceCalculate1400
+class InsuranceCalculate1399
+
+class StrategyTest {
+    + strategyTest() : void
+}
+InsuranceCalculate1399 ..|> InsuranceCalculate
+InsuranceCalculate1400 ..|> InsuranceCalculate
+StrategyTest ..> InsuranceCalculate
+StrategyTest ..> InsuranceCalculate1399 : <<create>>
+StrategyTest ..> InsuranceCalculate1400 : <<create>>
+@enduml
