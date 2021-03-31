@@ -1,0 +1,25 @@
+@startuml
+class Content<<Element>> {
+    - data : Integer
+    + Content(data:Integer)
+    + getData() : Integer
+    + setData(data:Integer) : void
+    + accept(contentVisitor:ContentVisitor) : void
+}
+
+interface ContentVisitor<<Visitor>> {
+    + visit(content:Content) : void
+}
+
+class AddVisitor
+
+class VisitorTest {
+    + visitorTest() : void
+}
+
+Content ..> ContentVisitor
+ContentVisitor ..> Content
+AddVisitor ..|> ContentVisitor
+VisitorTest ..> Content :<<create>>
+VisitorTest ..> AddVisitor :<<create>>
+@enduml

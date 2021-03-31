@@ -16,3 +16,4 @@ These design patterns are all about Class's objects communication. Behavioral pa
 * [State](state) - Alter an object's behavior when its state changes
 * [Strategy](strategy) - Encapsulates an algorithm inside a class
 * [Template Method](templatemethod) - Defer the exact steps of an algorithm to a subclass
+* [Visitor](visitor) - Defines a new operation to a class without change
