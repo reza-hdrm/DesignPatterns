@@ -1,12 +1,12 @@
 package com.rezahdrm.creational.abstractfactory.factory;
 
 
-public abstract class ShapeFactory {
-    public enum ShapeFactoryType {
+public interface ShapeFactory {
+    enum ShapeFactoryType {
         SHAPE2D, SHAPE3D;
     }
 
-    public static AbstractShapeFactory getShapeFactory(ShapeFactoryType shapeFactoryType) {
+    static AbstractShapeFactory getShapeFactory(ShapeFactoryType shapeFactoryType) {
         AbstractShapeFactory abstractShapeFactory = null;
         switch (shapeFactoryType) {
             case SHAPE2D:

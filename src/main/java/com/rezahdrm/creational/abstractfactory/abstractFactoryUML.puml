@@ -1,10 +1,10 @@
 @startuml
 package factory {
-    abstract class AbstractShapeFactory{
+    abstract class AbstractShapeFactory {
         + {abstract} getShape() : Shape
     }
 
-    enum ShapeType{
+    enum ShapeType {
         CIRCLE
         RECTANGLE
         SQUARE
@@ -18,15 +18,15 @@ package factory {
     class Shape3DFactory{
 
     }
-    class Shape2DFactory{
+    class Shape2DFactory {
 
     }
 
-    abstract class ShapeFactory{
+    interface ShapeFactory {
         + {static} getShapeFactory():AbstractShapeFactory
     }
 
-    enum ShapeFactoryType{
+    enum ShapeFactoryType {
         SHAPE2D
         SHAPE3D;
     }
@@ -60,7 +60,7 @@ package shape2D{
         - b : double
         - c : double
 
-        + setABC(a : double , b : double , c : double) : void
+        + setABC(a:double, b:double, c:double) : void
     }
 
     Circle ..|> Shape

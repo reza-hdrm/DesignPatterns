@@ -38,7 +38,7 @@ class CommandTest {
     + testCommand() : void
 }
 
-ServerCommandInvoker "1"*--"1" Command
+ServerCommandInvoker "1"*-->"1" Command
 ServerCommandInvoker ..> Command
 
 CommandTest ..> ServerAgent

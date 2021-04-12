@@ -59,6 +59,6 @@ class BridgeTest {
 
 BridgeTest ..> color
 BridgeTest ..> shape2D
-Shape2D "1"*- Color
+Shape2D "1"*-->"1" Color
 
 @enduml

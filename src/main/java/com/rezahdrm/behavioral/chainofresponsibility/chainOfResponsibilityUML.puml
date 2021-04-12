@@ -9,7 +9,7 @@ package handler {
     class FaxMessageHandler
     class SMSMessageHandler
 
-    MessageHandler --*"1" MessageHandler
+    MessageHandler "1"<--*"1" MessageHandler
     EmailMessageHandler --|> MessageHandler
     FaxMessageHandler --|> MessageHandler
     SMSMessageHandler --|> MessageHandler
@@ -50,4 +50,5 @@ Destination ---+ Message
 MessageBuilder ---+ Message
 MessageTest ..> Message
 MessageTest ..> MessageService
+MessageHandler ...> Message
 @enduml

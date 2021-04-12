@@ -20,7 +20,7 @@ class DBConnectionTest {
         DBConnection.getDBConnection();
         long creationTime = System.currentTimeMillis() - time;
         System.out.println(creationTime);
-        Assertions.assertTrue(creationTime > 0);
+        Assertions.assertTrue(creationTime >= 0);
 
         DBConnection.getDBConnection();
         time = System.currentTimeMillis();

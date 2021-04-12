@@ -43,25 +43,25 @@ class Builder{
 	- weightB : boolean
 	- noFastPSkip : boolean
   
-	+ keyInt(keyInt : int) : Builder  
-	+ minKeyInt(minKeyInt : int) : Builder  
-	+ sceneCut(sceneCut : int) : Builder  
-	+ bFrames(bFrames : int) : Builder  
-	+ bAdapt(bAdapt : int) : Builder  
-	+ qp(qp : int) : Builder  
-	+ bitrate(bitrate : int) : Builder  
-	+ bFrameBias(bFrameBias : boolean) : Builder  
-	+ crf(crf : int) : Builder  
-	+ qpStep(qpStep : int) : Builder  
-	+ pbRatio(pbRatio : int) : Builder  
-	+ chromaOffset(chromaOff : int) : Builder  
-	+ rateTol(rateTol : float) : Builder  
-	+ pass(pass : byte) : Builder  
-	+ stats(stats : boolean) : Builder  
-	+ direct(direct : int) : Builder  
-	+ meRange(meRange : int) : Builder  
-	+ weightB(weightB : boolean) : Builder  
-	+ noFastPSkip(noFastPSkip : boolean) : Builder
+	+ keyInt(keyInt:int) : Builder
+	+ minKeyInt(minKeyInt:int) : Builder
+	+ sceneCut(sceneCut:int) : Builder
+	+ bFrames(bFrames:int) : Builder
+	+ bAdapt(bAdapt:int) : Builder
+	+ qp(qp:int) : Builder
+	+ bitrate(bitrate:int) : Builder
+	+ bFrameBias(bFrameBias:boolean) : Builder
+	+ crf(crf:int) : Builder
+	+ qpStep(qpStep:int) : Builder
+	+ pbRatio(pbRatio:int) : Builder
+	+ chromaOffset(chromaOff:int) : Builder
+	+ rateTol(rateTol:float) : Builder
+	+ pass(pass:byte) : Builder
+	+ stats(stats:boolean) : Builder
+	+ direct(direct:int) : Builder
+	+ meRange(meRange:int) : Builder
+	+ weightB(weightB:boolean) : Builder
+	+ noFastPSkip(noFastPSkip:boolean) : Builder
 	+ build() : X264Properties
 }
 

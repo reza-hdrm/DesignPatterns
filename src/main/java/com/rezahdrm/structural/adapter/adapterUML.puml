@@ -48,7 +48,7 @@ class UserDTOAdapterTest {
 }
 
 UserDTOAdapter --|> User
-UserDTOAdapter --* "1" UserDTO
+UserDTOAdapter "1"<--*"1" UserDTO
 UserDTOAdapterTest ..> UserDAO
 UserDTOAdapterTest ..> UserDTOAdapter
 UserDTOAdapterTest ..> UserDTO

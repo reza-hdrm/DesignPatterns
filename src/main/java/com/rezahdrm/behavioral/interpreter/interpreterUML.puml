@@ -33,9 +33,9 @@ class InterpreterTest {
 }
 
 
-Evaluator "1"*--"1" Expression
-Mines "1"*--"2" Expression
-Plus "1"*--"2" Expression
+Evaluator "1"*-->"1" Expression
+Mines "1"*-->"2" Expression
+Plus "1"*-->"2" Expression
 Plus ...|> Expression
 Mines ..|> Expression
 Evaluator ...|> Expression

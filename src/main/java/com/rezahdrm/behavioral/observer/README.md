@@ -1,4 +1,4 @@
-# Iterator
+# Observer
 
 
 ## Intent
@@ -15,3 +15,4 @@ A large monolithic design does not scale well as new graphing or monitoring requ
 * [java.util.EventListener](http://docs.oracle.com/javase/8/docs/api/java/util/EventListener.html)
 * [javax.faces.event.PhaseListener](http://docs.oracle.com/javaee/7/api/javax/faces/event/PhaseListener.html)
 * [java.util.Observer](http://docs.oracle.com/javase/8/docs/api/java/util/Observer.html) / [java.util.Observable](http://docs.oracle.com/javase/8/docs/api/java/util/Observable.html)
+* [javax.jms.Topic](https://docs.oracle.com/javaee/7/api/javax/jms/class-use/Topic.html)

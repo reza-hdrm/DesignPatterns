@@ -26,7 +26,7 @@ class MediatorTest {
 Client --|> SenderReceiver
 Group --|> SenderReceiver
 Group ..> Client
-MessageDelivery "1"*--"1..*" SenderReceiver
+MessageDelivery "1"*-->"1..*" SenderReceiver
 MessageDelivery ..> SenderReceiver
 MediatorTest ..> MessageDelivery
 MediatorTest ..> Client

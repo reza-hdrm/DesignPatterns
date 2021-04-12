@@ -3,7 +3,7 @@ package com.rezahdrm.creational.abstractfactory.factory;
 import com.rezahdrm.creational.abstractfactory.Shape;
 import com.rezahdrm.creational.abstractfactory.shape3D.*;
 
-public class Shape3DFactory extends AbstractShapeFactory {
+public class Shape3DFactory implements AbstractShapeFactory {
     @Override
     public Shape getShape(ShapeType shapeType) {
         Shape shape = null;

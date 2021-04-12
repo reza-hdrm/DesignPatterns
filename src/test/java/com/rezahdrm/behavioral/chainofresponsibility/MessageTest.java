@@ -4,12 +4,6 @@ import com.rezahdrm.behavioral.chainofresponsibility.service.MessageService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class MessageTest {
 
     @Test

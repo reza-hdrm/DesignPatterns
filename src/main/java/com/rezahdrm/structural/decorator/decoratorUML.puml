@@ -47,11 +47,11 @@ class DecoratorTest {
 
 FighterAircraft --|> Aircraft
 AircraftDecorator --|> Aircraft
-AircraftDecorator *--"1" Aircraft
+AircraftDecorator "1"*-->"1" Aircraft
 FighterAircraftType --+ FighterAircraft
 GunDecorator --|> AircraftDecorator
 MissileDecorator --|> AircraftDecorator
-DecoratorTest ..> Aircraft
-DecoratorTest ..> MissileDecorator
-DecoratorTest ..> GunDecorator
+DecoratorTest ..> Aircraft          : <<create>>
+DecoratorTest ..> MissileDecorator  : <<create>>
+DecoratorTest ..> GunDecorator      : <<create>>
 @enduml

@@ -22,8 +22,9 @@ class DBConnectionTest {
     + DBH2Test() : void
 }
 
-DBConnection --*"1" DBConnection
-Config --*"1" DBConnection
+DBConnection "1"<--*"1" DBConnection
+Config "1"<--*"1" DBConnection
+Config "1"<--*"1" Config
 DBConnectionTest ..> DBConnection
 
 @enduml

@@ -1,7 +1,5 @@
 @startuml
 
-@startuml
-
 class CPU {
     - brand : String
     - series : String
@@ -41,10 +39,10 @@ class ComputerFacadeTest {
     + test() : void
 }
 
-CPU "1"--*"1" ComputerFacade
-Memory "1"--*"1" ComputerFacade
-HardDrive "1"--*"1" ComputerFacade
-ComputerFacade <.. ComputerFacadeTest
+CPU "1"<--*"1" ComputerFacade
+Memory "1"<--*"1" ComputerFacade
+HardDrive "1"<--*"1" ComputerFacade
+ComputerFacade <.. ComputerFacadeTest : <<create>>
 
 
 @enduml

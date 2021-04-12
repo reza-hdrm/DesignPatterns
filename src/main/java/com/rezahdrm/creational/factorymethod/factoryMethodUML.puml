@@ -29,7 +29,7 @@ package shape2D{
         - b : double
         - c : double
 
-        + setABC(a : double , b : double , c : double) : void
+        + setABC(a:double, b:double, c:double) : void
     }
     Circle ..|> Shape2D
     Rectangle ..|> Shape2D
@@ -39,7 +39,8 @@ package shape2D{
 
 }
 class Shape2DFactory{
- + getInstance(shape2DType : Shape2DType) : Shape2D {static}
+    - Shape2DFactory()
+    + getInstance(shape2DType:Shape2DType) : Shape2D {static}
 }
 
 class Shape2DFactoryTest {

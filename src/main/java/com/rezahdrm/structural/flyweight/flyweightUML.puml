@@ -1,7 +1,5 @@
 @startuml
 
-@startuml
-
 class Person <<EntityClass>>{
     - id : Long
     - firstName : String
@@ -19,7 +17,7 @@ class PersonFlyweightTest {
     + testFlyWeight : void
 }
 
-PersonService "*"*--"1" Person
-PersonFlyweightTest ..> PersonService
-PersonFlyweightTest ..> Person
+PersonService "*"*-->"1" Person
+PersonFlyweightTest ..> PersonService   : <<create>>
+PersonFlyweightTest ..> Person          : <<create>>
 @enduml

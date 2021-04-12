@@ -24,7 +24,7 @@ class MenuComponentTest {
 }
 
 Menu --|> MenuComponent
-Menu "1"*--"0..*" MenuComponent
+Menu "1"*-->"0..*" MenuComponent
 MenuItem --|> MenuComponent
 MenuComponentTest ..> Menu
 MenuComponentTest ..> MenuItem

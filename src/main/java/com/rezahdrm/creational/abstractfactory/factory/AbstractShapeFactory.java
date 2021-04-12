@@ -2,7 +2,7 @@ package com.rezahdrm.creational.abstractfactory.factory;
 
 import com.rezahdrm.creational.abstractfactory.Shape;
 
-public abstract class AbstractShapeFactory {
+public interface AbstractShapeFactory {
     public enum ShapeType {
         CIRCLE, RECTANGLE, SQUARE, TRIANGLE,
         CYLINDER, CUBE, SPHERE, CONE, CUBOID
