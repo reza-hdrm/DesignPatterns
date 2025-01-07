@@ -3,7 +3,7 @@ package com.rezahdrm.behavioral.interpreter;
 import java.util.Map;
 
 public class Num implements Expression {
-    private int value;
+    private final int value;
 
     public Num(int value) {
         this.value = value;

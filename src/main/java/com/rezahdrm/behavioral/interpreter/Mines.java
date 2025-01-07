@@ -3,8 +3,8 @@ package com.rezahdrm.behavioral.interpreter;
 import java.util.Map;
 
 public class Mines implements Expression {
-    private Expression leftOperand;
-    private Expression rightOperand;
+    private final Expression leftOperand;
+    private final Expression rightOperand;
 
     public Mines(Expression leftOperand, Expression rightOperand) {
         this.leftOperand = leftOperand;

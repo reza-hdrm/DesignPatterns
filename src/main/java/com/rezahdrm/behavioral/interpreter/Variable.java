@@ -3,7 +3,7 @@ package com.rezahdrm.behavioral.interpreter;
 import java.util.Map;
 
 public class Variable implements Expression {
-    private String name;
+    private final String name;
 
     public Variable(String name) {
         this.name = name;

@@ -1,6 +1,7 @@
 package com.rezahdrm.structural.proxy;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -13,7 +14,7 @@ public class LoggerProxy implements InvocationHandler {
 
     public LoggerProxy(PersonDAO personDAO) {
         this.personDAO = personDAO;
-        logger = Logger.getLogger(LoggerProxy.class);
+        logger = LoggerFactory.getLogger(LoggerProxy.class);
     }
 
     public static PersonDAO createLoggerProxy(PersonDAO dao) {

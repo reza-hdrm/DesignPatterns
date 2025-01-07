@@ -7,21 +7,11 @@ public class Shape2DFactory {
     }
 
     public static Shape2D getInstance(Shape2D.Shape2DType shape2DType) {
-        Shape2D shape2D = null;
-        switch (shape2DType) {
-            case CIRCLE:
-                shape2D = new Circle();
-                break;
-            case RECTANGLE:
-                shape2D = new Rectangle();
-                break;
-            case SQUARE:
-                shape2D = new Square();
-                break;
-            case TRIANGLE:
-                shape2D = new Triangle();
-                break;
-        }
-        return shape2D;
+        return switch (shape2DType) {
+            case CIRCLE -> new Circle();
+            case RECTANGLE -> new Rectangle();
+            case SQUARE -> new Square();
+            case TRIANGLE -> new Triangle();
+        };
     }
 }

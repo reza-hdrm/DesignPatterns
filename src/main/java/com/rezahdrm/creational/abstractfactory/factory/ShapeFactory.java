@@ -7,17 +7,10 @@ public interface ShapeFactory {
     }
 
     static AbstractShapeFactory getShapeFactory(ShapeFactoryType shapeFactoryType) {
-        AbstractShapeFactory abstractShapeFactory = null;
-        switch (shapeFactoryType) {
-            case SHAPE2D:
-                abstractShapeFactory = new Shape2DFactory();
-                break;
-            case SHAPE3D:
-                abstractShapeFactory = new Shape3DFactory();
-                break;
-            default:
-                throw new IllegalArgumentException("Shape Factory Type Not Found");
-        }
-        return abstractShapeFactory;
+        return switch (shapeFactoryType) {
+            case SHAPE2D -> new Shape2DFactory();
+            case SHAPE3D -> new Shape3DFactory();
+            default -> throw new IllegalArgumentException("Shape Factory Type Not Found");
+        };
     }
 }

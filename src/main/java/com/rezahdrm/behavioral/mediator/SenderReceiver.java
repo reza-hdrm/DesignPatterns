@@ -4,7 +4,7 @@ import java.util.Date;
 
 public abstract class SenderReceiver {
     protected MessageDelivery messageDelivery;
-    private String name;
+    private final String name;
 
     public SenderReceiver(MessageDelivery messageDelivery, String name) {
         this.messageDelivery = messageDelivery;

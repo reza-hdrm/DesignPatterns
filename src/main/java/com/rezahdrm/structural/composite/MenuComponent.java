@@ -1,5 +1,7 @@
 package com.rezahdrm.structural.composite;
 
+import java.util.Objects;
+
 // Component
 public abstract class MenuComponent {
     private final String name;
@@ -17,8 +19,8 @@ public abstract class MenuComponent {
 
         MenuComponent that = (MenuComponent) o;
 
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        return url != null ? url.equals(that.url) : that.url == null;
+        if (!Objects.equals(name, that.name)) return false;
+        return Objects.equals(url, that.url);
     }
 
     @Override

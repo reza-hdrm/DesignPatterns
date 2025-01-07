@@ -5,7 +5,7 @@ import java.util.Map;
 
 // Service
 public class PersonService {
-    private Map<Long, Person> personCache;
+    private final Map<Long, Person> personCache;
 
     public PersonService() {
         personCache = new HashMap<>();

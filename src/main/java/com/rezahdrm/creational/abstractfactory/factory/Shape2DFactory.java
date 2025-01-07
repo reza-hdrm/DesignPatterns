@@ -7,23 +7,12 @@ public class Shape2DFactory implements AbstractShapeFactory {
 
     @Override
     public Shape getShape(ShapeType shapeType) {
-        Shape shape = null;
-        switch (shapeType) {
-            case CIRCLE:
-                shape = new Circle();
-                break;
-            case SQUARE:
-                shape = new Square();
-                break;
-            case TRIANGLE:
-                shape = new Triangle();
-                break;
-            case RECTANGLE:
-                shape = new Rectangle();
-                break;
-            default:
-                throw new IllegalArgumentException("Shape2D Type Not Found");
-        }
-        return shape;
+        return switch (shapeType) {
+            case CIRCLE -> new Circle();
+            case SQUARE -> new Square();
+            case TRIANGLE -> new Triangle();
+            case RECTANGLE -> new Rectangle();
+            default -> throw new IllegalArgumentException("Shape2D Type Not Found");
+        };
     }
 }

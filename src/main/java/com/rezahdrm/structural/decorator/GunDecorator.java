@@ -2,7 +2,7 @@ package com.rezahdrm.structural.decorator;
 
 public class GunDecorator extends AircraftDecorator {
     private String weaponName;
-    private float caliber;
+    private final float caliber;
 
     public GunDecorator(Aircraft aircraft, String weaponName, float caliber) {
         super(aircraft);

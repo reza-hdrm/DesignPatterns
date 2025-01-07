@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MessageDelivery {
-    private Map<String, SenderReceiver> receiverMap = new HashMap<>();
+    private final Map<String, SenderReceiver> receiverMap = new HashMap<>();
 
     public void registerClient(SenderReceiver senderReceiver) {
         receiverMap.put(senderReceiver.getName(), senderReceiver);

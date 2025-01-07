@@ -12,17 +12,11 @@ public class MessageService {
     public void sendMessage(Message message) {
         MessageHandler nextHandler = null;
         for (Message.Destination destination : message.getDestinationMap().keySet()) {
-            switch (destination) {
-                case FAX:
-                    nextHandler = new FaxMessageHandler(nextHandler);
-                    break;
-                case SMS:
-                    nextHandler = new SMSMessageHandler(nextHandler);
-                    break;
-                case EMAIL:
-                    nextHandler = new EmailMessageHandler(nextHandler);
-                    break;
-            }
+            nextHandler = switch (destination) {
+                case FAX -> new FaxMessageHandler(nextHandler);
+                case SMS -> new SMSMessageHandler(nextHandler);
+                case EMAIL -> new EmailMessageHandler(nextHandler);
+            };
             if (Objects.nonNull(nextHandler))
                 nextHandler.handle(message);
         }

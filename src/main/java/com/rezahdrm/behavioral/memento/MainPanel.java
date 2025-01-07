@@ -6,25 +6,24 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class MainPanel extends JPanel {
-    private JLabel jLabel;
-    private JTextField jTextField;
-    private JTextFieldHistory jTextFieldHistory;
-    private JButton jButton;
+    private final JTextFieldHistory jTextFieldHistory;
 
     public MainPanel() {
-        jLabel = new JLabel("Enter Your Name (Press ctrl+z to undo)");
-        jTextField = new JTextField(20);
+        JLabel jLabel = new JLabel("Enter Your Name (Press ctrl+z to undo)");
+        JTextField jTextField = new JTextField(20);
         jTextFieldHistory = new JTextFieldHistory(jTextField);
-        jButton = new JButton("Save!");
+        JButton jButton = new JButton("Save!");
         setLayout(new FlowLayout());
+
         add(jLabel);
         add(jTextField);
         add(jButton);
+
         jButton.addActionListener(event -> jTextFieldHistory.save());
         jTextField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if ((e.getKeyCode() == KeyEvent.VK_Z) && ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0))
+                if ((e.getKeyCode() == KeyEvent.VK_Z) && ((e.getModifiersEx() & KeyEvent.CTRL_MASK) != 0))
                     jTextFieldHistory.undo();
             }
         });

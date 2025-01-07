@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class FileContentReader implements Iterable<String> {
-    private File file;
+    private final File file;
     private FileReader fileReader;
     private BufferedReader bufferedReader;
 

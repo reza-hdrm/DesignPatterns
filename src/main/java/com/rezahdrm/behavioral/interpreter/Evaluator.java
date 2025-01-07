@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Stack;
 
 public class Evaluator implements Expression {
-    private Expression syntaxTree;
+    private final Expression syntaxTree;
 
     public Evaluator(final String expression) {
         final Stack<Expression> expressionStack = new Stack<>();
